@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testTimeout": 100000,
+  "moduleFileExtensions": ["ts", "js", "json", "node"]
+}
