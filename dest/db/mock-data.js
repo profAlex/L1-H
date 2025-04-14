@@ -11,17 +11,17 @@ exports.videoDb = {
             minAgeRestriction: 12,
             createdAt: new Date(),
             publicationDate: new Date(new Date().getDate() + 1),
-            availableResolutions: [basic_types_1.Resolution.P144, 'P240']
+            availableResolutions: [basic_types_1.Resolution.P240],
         },
         {
             id: 2,
             title: 'Movie02',
             author: 'Author02',
-            canBeDownloaded: true,
-            minAgeRestriction: 10,
+            canBeDownloaded: false,
+            minAgeRestriction: 8,
             createdAt: new Date(),
             publicationDate: new Date(new Date().getDate() + 1),
-            availableResolutions: [basic_types_1.Resolution.P144, 'P240']
-        },
+            availableResolutions: [basic_types_1.Resolution.P144]
+        }
     ]
 };

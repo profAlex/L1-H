@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a9ab30-0cff-4dd4-a420-f6e239ebd549" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/db/mock-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/db/mock-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/setup-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/setup-app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/driver.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/videos-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/testing.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/testing-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup-app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup-app.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +93,8 @@
       <option name="presentableId" value="Default" />
       <updated>1744468639395</updated>
       <workItem from="1744468640509" duration="10445000" />
-      <workItem from="1744633299298" duration="3951000" />
+      <workItem from="1744633299298" duration="5496000" />
+      <workItem from="1744639228091" duration="3258000" />
     </task>
     <servers />
   </component>

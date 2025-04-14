@@ -7,7 +7,8 @@ const express_1 = __importDefault(require("express"));
 const setup_app_1 = require("./setup-app");
 const app = (0, express_1.default)();
 (0, setup_app_1.setupApp)(app);
-const PORT = process.env.PORT || 3001;
+const PORT = /*process.env.PORT ||*/ 3003;
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
+module.exports = app;
