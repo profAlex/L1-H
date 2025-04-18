@@ -71,5 +71,18 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
         ...req.body
     };
 
-    res.status(204); //.send(videoDb.videos[indexOfElement]);
+    res.sendStatus(204); //.send(videoDb.videos[indexOfElement]);
+});
+
+videosRouter.delete('/:id', (req: Request, res: Response) => {
+    const video = videoDb.videos.find((d) => d.id === +req.params.id);
+
+    if(!video) {
+        res.sendStatus(404);
+        return;
+    }
+
+    const indexOfElement = videoDb.videos.findIndex((d) => d.id === +req.params.id);
+    videoDb.videos.splice(indexOfElement, 1);
+    res.sendStatus(204);
 });

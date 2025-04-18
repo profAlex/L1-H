@@ -44,5 +44,15 @@ exports.videosRouter.put('/:id', (req, res) => {
     */
     const indexOfElement = mock_data_1.videoDb.videos.findIndex((d) => d.id === +req.params.id);
     mock_data_1.videoDb.videos[indexOfElement] = Object.assign(Object.assign({}, mock_data_1.videoDb.videos[indexOfElement]), req.body);
-    res.status(204); //.send(videoDb.videos[indexOfElement]);
+    res.sendStatus(204); //.send(videoDb.videos[indexOfElement]);
+});
+exports.videosRouter.delete('/:id', (req, res) => {
+    const video = mock_data_1.videoDb.videos.find((d) => d.id === +req.params.id);
+    if (!video) {
+        res.sendStatus(404);
+        return;
+    }
+    const indexOfElement = mock_data_1.videoDb.videos.findIndex((d) => d.id === +req.params.id);
+    mock_data_1.videoDb.videos.splice(indexOfElement, 1);
+    res.sendStatus(204);
 });
