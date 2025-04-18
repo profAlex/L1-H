@@ -45,3 +45,31 @@ videosRouter.post('/', (req: Request, res: Response) => {
     res.status(201).send(newVideo);
 });
 
+videosRouter.put('/:id', (req: Request, res: Response) => {
+    const video = videoDb.videos.find((d) => d.id === +req.params.id);
+
+    if(!video) {
+        res.sendStatus(404);
+        return;
+    }
+
+    //проверяем на ошибки inputModel
+    /*
+    const errors = vehicleInputDtoValidation(req.body);
+
+    if (errors.length > 0) {
+        res.status(HttpStatus.BadRequest).send(createErrorMessages(errors));
+        return;
+    }
+    */
+
+    const indexOfElement = videoDb.videos.findIndex((d) => d.id === +req.params.id);
+
+
+    videoDb.videos[indexOfElement] = {
+        ...videoDb.videos[indexOfElement],
+        ...req.body
+    };
+
+    res.status(204); //.send(videoDb.videos[indexOfElement]);
+});

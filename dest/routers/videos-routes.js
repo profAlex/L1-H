@@ -27,3 +27,22 @@ exports.videosRouter.post('/', (req, res) => {
     mock_data_1.videoDb.videos.push(newVideo);
     res.status(201).send(newVideo);
 });
+exports.videosRouter.put('/:id', (req, res) => {
+    const video = mock_data_1.videoDb.videos.find((d) => d.id === +req.params.id);
+    if (!video) {
+        res.sendStatus(404);
+        return;
+    }
+    //проверяем на ошибки inputModel
+    /*
+    const errors = vehicleInputDtoValidation(req.body);
+
+    if (errors.length > 0) {
+        res.status(HttpStatus.BadRequest).send(createErrorMessages(errors));
+        return;
+    }
+    */
+    const indexOfElement = mock_data_1.videoDb.videos.findIndex((d) => d.id === +req.params.id);
+    mock_data_1.videoDb.videos[indexOfElement] = Object.assign(Object.assign({}, mock_data_1.videoDb.videos[indexOfElement]), req.body);
+    res.status(204); //.send(videoDb.videos[indexOfElement]);
+});
