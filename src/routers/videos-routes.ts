@@ -1,6 +1,8 @@
 import {Router} from "express";
 import {Request, Response} from "express";
 import {videoDb} from "../db/mock-data";
+import {FieldError} from "../basic_types/basic-types";
+import {newVideoFieldsValidation} from "../validation/fields-validation";
 
 
 export const videosRouter = Router();
@@ -25,12 +27,14 @@ videosRouter.get('/:id', (req: Request, res: Response) => {
 
 videosRouter.post('/', (req: Request, res: Response) => {
     // здесь валидация входящего реквеста
-    /* const errors: ValidationError[] = driverInputDtoValidation(req.body);
+
+    const errors: FieldError[] = newVideoFieldsValidation(req.body);
+
     if(errors.length > 0) {
-        res.status(HttpStatus.BadRequest).send({ errors: errors });
+        res.status(400).send({ errors: errors });
         return;
     }
-*/
+
     const newVideo = {
         id: videoDb.videos.length ? videoDb.videos[videoDb.videos.length-1].id +  1 : 1,
         canBeDownloaded: false,
