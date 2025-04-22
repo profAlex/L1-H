@@ -2,7 +2,7 @@ import {Request} from "express";
 import {FieldError, Resolution} from "../basic_types/basic-types";
 
 const ifResolutionsMeetRequirements = (resolutions: Resolution[]) :boolean => {
-    if(resolutions && resolutions.length < 1) {
+    if(resolutions && resolutions.length > 0) {
         resolutions.forEach((item: string) => {
             if(!Object.keys(Resolution).includes(item)) {
                 return false;
@@ -18,11 +18,9 @@ const ifResolutionsMeetRequirements = (resolutions: Resolution[]) :boolean => {
 export const newVideoFieldsValidation = (
     request: Request) :FieldError[] => {
 
-
     const errorsArray: FieldError[] = [];
 
-    if(!request.body.title ||
-        typeof request.body.title !== 'string')
+    if(!request.body.title || typeof request.body.title !== "string")
     {
         errorsArray.push({field: 'title', errorDescription: 'field is missing or has incorrect type'});
     }
@@ -38,7 +36,7 @@ export const newVideoFieldsValidation = (
     if(!request.body.author ||
         typeof request.body.author !== 'string')
     {
-        errorsArray.push({field: 'author', errorDescription: 'field /"author/" missing or incorrect type'});
+        errorsArray.push({field: 'author', errorDescription: 'field "author" missing or incorrect type'});
     }
 
     if(request.body.author && typeof request.body.author === 'string' && request.body.author.trim().length < 1){
@@ -50,13 +48,11 @@ export const newVideoFieldsValidation = (
     }
     //&& request.body.availableResolutions.every((item: Resolution) => Object.values(Resolution).includes(item))
     if(!Array.isArray(request.body.availableResolutions) ){
-        errorsArray.push({field: 'availableResolutions', errorDescription: 'field /"availableResolutions/" missing or incorrect type'});
+        errorsArray.push({field: 'availableResolutions', errorDescription: 'field "availableResolutions" missing or incorrect type'});
     }
 
-    if(Array.isArray(request.body.availableResolutions))
-    {
-        if(!ifResolutionsMeetRequirements(request.body.availableResolutions))
-        {
+    if(Array.isArray(request.body.availableResolutions)) {
+        if (!ifResolutionsMeetRequirements(request.body.availableResolutions)) {
             errorsArray.push({field: 'availableResolutions', errorDescription: 'field(s) value is not allowed'});
         }
     }

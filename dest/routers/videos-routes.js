@@ -10,6 +10,7 @@ exports.videosRouter.get('/', (req, res) => {
 });
 exports.videosRouter.get('/:id', (req, res) => {
     const video = mock_data_1.videoDb.videos.find((d) => d.id === +req.params.id);
+    //const errors: FieldError[] = newVideoFieldsValidation(req);
     if (!video) {
         res.sendStatus(404);
         return;
@@ -18,7 +19,7 @@ exports.videosRouter.get('/:id', (req, res) => {
 });
 exports.videosRouter.post('/', (req, res) => {
     // здесь валидация входящего реквеста
-    const errors = (0, fields_validation_1.newVideoFieldsValidation)(req.body);
+    const errors = (0, fields_validation_1.newVideoFieldsValidation)(req);
     if (errors.length > 0) {
         res.status(400).send({ errors: errors });
         return;

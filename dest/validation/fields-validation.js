@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.newVideoFieldsValidation = void 0;
 const basic_types_1 = require("../basic_types/basic-types");
 const ifResolutionsMeetRequirements = (resolutions) => {
-    if (resolutions && resolutions.length < 1) {
+    if (resolutions && resolutions.length > 0) {
         resolutions.forEach((item) => {
             if (!Object.keys(basic_types_1.Resolution).includes(item)) {
                 return false;
@@ -15,8 +15,7 @@ const ifResolutionsMeetRequirements = (resolutions) => {
 };
 const newVideoFieldsValidation = (request) => {
     const errorsArray = [];
-    if (!request.body.title ||
-        typeof request.body.title !== 'string') {
+    if (!request.body.title || typeof request.body.title !== "string") {
         errorsArray.push({ field: 'title', errorDescription: 'field is missing or has incorrect type' });
     }
     if (request.body.title && typeof request.body.title === 'string' && request.body.title.trim().length < 1) {
@@ -27,7 +26,7 @@ const newVideoFieldsValidation = (request) => {
     }
     if (!request.body.author ||
         typeof request.body.author !== 'string') {
-        errorsArray.push({ field: 'author', errorDescription: 'field /"author/" missing or incorrect type' });
+        errorsArray.push({ field: 'author', errorDescription: 'field "author" missing or incorrect type' });
     }
     if (request.body.author && typeof request.body.author === 'string' && request.body.author.trim().length < 1) {
         errorsArray.push({ field: 'author', errorDescription: 'field has no symbols' });
@@ -37,7 +36,7 @@ const newVideoFieldsValidation = (request) => {
     }
     //&& request.body.availableResolutions.every((item: Resolution) => Object.values(Resolution).includes(item))
     if (!Array.isArray(request.body.availableResolutions)) {
-        errorsArray.push({ field: 'availableResolutions', errorDescription: 'field /"availableResolutions/" missing or incorrect type' });
+        errorsArray.push({ field: 'availableResolutions', errorDescription: 'field "availableResolutions" missing or incorrect type' });
     }
     if (Array.isArray(request.body.availableResolutions)) {
         if (!ifResolutionsMeetRequirements(request.body.availableResolutions)) {

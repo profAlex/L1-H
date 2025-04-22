@@ -16,6 +16,9 @@ videosRouter.get('/', (req: Request, res: Response) => {
 videosRouter.get('/:id', (req: Request, res: Response) => {
     const video = videoDb.videos.find((d) => d.id === +req.params.id);
 
+    //const errors: FieldError[] = newVideoFieldsValidation(req);
+
+
     if(!video) {
         res.sendStatus(404);
         return;
@@ -28,12 +31,14 @@ videosRouter.get('/:id', (req: Request, res: Response) => {
 videosRouter.post('/', (req: Request, res: Response) => {
     // здесь валидация входящего реквеста
 
-    const errors: FieldError[] = newVideoFieldsValidation(req.body);
+
+    const errors: FieldError[] = newVideoFieldsValidation(req);
 
     if(errors.length > 0) {
         res.status(400).send({ errors: errors });
         return;
     }
+
 
     const newVideo = {
         id: videoDb.videos.length ? videoDb.videos[videoDb.videos.length-1].id +  1 : 1,
