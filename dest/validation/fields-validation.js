@@ -3,12 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.newVideoFieldsValidation = void 0;
 const basic_types_1 = require("../basic_types/basic-types");
 const ifResolutionsMeetRequirements = (resolutions) => {
-    if (resolutions && resolutions.length > 0) {
-        resolutions.forEach((item) => {
+    if (resolutions && resolutions.length) {
+        /*resolutions.every((item: string) => {
+            if(!Object.keys(Resolution).includes(item)) {
+                //console.log(item);
+                return false;
+            }
+        })*/
+        for (const item of resolutions) {
             if (!Object.keys(basic_types_1.Resolution).includes(item)) {
                 return false;
             }
-        });
+        }
         return true;
     }
     return false;

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a9ab30-0cff-4dd4-a420-f6e239ebd549" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dest/routers/videos-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/videos-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/validation/fields-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/validation/fields-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/basic_types/basic-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/basic_types/basic-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/videos-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/videos-routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/validation/fields-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/fields-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +95,7 @@
       <workItem from="1744976142912" duration="6945000" />
       <workItem from="1745076249340" duration="15698000" />
       <workItem from="1745333180758" duration="6627000" />
+      <workItem from="1745437317143" duration="2617000" />
     </task>
     <servers />
   </component>
@@ -107,5 +107,17 @@
         <option value="$PROJECT_DIR$/src/setup-app.js" />
       </list>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/validation/fields-validation.ts</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

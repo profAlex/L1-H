@@ -1,14 +1,19 @@
 import {Request} from "express";
 import {FieldError, Resolution} from "../basic_types/basic-types";
 
-const ifResolutionsMeetRequirements = (resolutions: Resolution[]) :boolean => {
-    if(resolutions && resolutions.length > 0) {
-        resolutions.forEach((item: string) => {
+const ifResolutionsMeetRequirements = (resolutions: Array<string>) :boolean => {
+    if(resolutions && resolutions.length) {
+        /*resolutions.every((item: string) => {
             if(!Object.keys(Resolution).includes(item)) {
+                //console.log(item);
                 return false;
             }
-        })
-
+        })*/
+        for (const item of resolutions) {
+            if (!Object.keys(Resolution).includes(item)) {
+                return false;
+            }
+        }
         return true;
     }
 
