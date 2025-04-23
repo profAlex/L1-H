@@ -64,12 +64,32 @@ export const newVideoFieldsValidation = (request: Request) :FieldError[] =>
     return errorsArray;
 };
 
-export const updateVideoFieldsValidation = (req: Request) :FieldError[] =>
+export const updateVideoFieldsValidation = (request: Request) :FieldError[] =>
 {
+    const errorsArray: FieldError[] = newVideoFieldsValidation(request);
 
+    if(!request.body.canBeDownloaded || typeof request.body.title !== "boolean")
+    {
+        errorsArray.push({field: 'canBeDownloaded', message: 'field is missing or has incorrect type'});
+    }
 
-    const errorsArray: FieldError[] = [];
+    if(request.body.minAgeRestriction === undefined)
+    {
+        errorsArray.push({field: 'minAgeRestriction', message: 'field is missing'});
+    }
+    else if(typeof request.body.minAgeRestriction !== 'number'
+    || !(request.body.minAgeRestriction > 0 && request.body.minAgeRestriction < 19))
+    {
+        errorsArray.push({field: 'minAgeRestriction', message: 'field has incorrect value'});
+    }
 
+    if(!request.body.publicationDate)
+    {
+        errorsArray.push({field: 'publicationDate', message: 'field is missing'});
+    }
+    else if(typeof request.body.title !== 'string'){
+        errorsArray.push({field: 'title', message: 'field is missing or has incorrect type'});
+    }
 
     return errorsArray;
 }

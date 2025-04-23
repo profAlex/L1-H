@@ -44,7 +44,7 @@ exports.videosRouter.put('/:id', (req, res) => {
     }
     */
     //const errorsMessages: FieldError[] = updateVideoFieldsValidation(req);
-    const errorsMessages = (0, fields_validation_1.newVideoFieldsValidation)(req);
+    const errorsMessages = (0, fields_validation_1.updateVideoFieldsValidation)(req);
     if (errorsMessages.length > 0) {
         res.status(400).send({ errorsMessages: errorsMessages });
         return;

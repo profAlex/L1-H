@@ -2,7 +2,7 @@ import {Router} from "express";
 import {Request, Response} from "express";
 import {videoDb} from "../db/mock-data";
 import {FieldError} from "../basic_types/basic-types";
-import {newVideoFieldsValidation} from "../validation/fields-validation";
+import {newVideoFieldsValidation, updateVideoFieldsValidation} from "../validation/fields-validation";
 
 
 export const videosRouter = Router();
@@ -72,7 +72,7 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
     }
     */
     //const errorsMessages: FieldError[] = updateVideoFieldsValidation(req);
-    const errorsMessages: FieldError[] = newVideoFieldsValidation(req);
+    const errorsMessages: FieldError[] = updateVideoFieldsValidation(req);
 
     if(errorsMessages.length > 0) {
         res.status(400).send({ errorsMessages: errorsMessages });
