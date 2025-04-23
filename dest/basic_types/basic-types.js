@@ -12,3 +12,7 @@ var Resolution;
     Resolution["P1440"] = "P1440";
     Resolution["P2160"] = "P2160";
 })(Resolution || (exports.Resolution = Resolution = {}));
+/*
+export type APIErrorResult = {
+    errorMessages: FieldError[]
+}*/ 

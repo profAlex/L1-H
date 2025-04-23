@@ -21,10 +21,11 @@ export type Video = {
 }
 
 export type FieldError = {
+    message: string
     field: string,
-    errorDescription: string
 }
 
+/*
 export type APIErrorResult = {
     errorMessages: FieldError[]
-}
+}*/

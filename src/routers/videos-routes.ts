@@ -32,10 +32,10 @@ videosRouter.post('/', (req: Request, res: Response) => {
     // здесь валидация входящего реквеста
 
 
-    const errors: FieldError[] = newVideoFieldsValidation(req);
+    const errorsMessages: FieldError[] = newVideoFieldsValidation(req);
 
-    if(errors.length > 0) {
-        res.status(400).send({ errors: errors });
+    if(errorsMessages.length > 0) {
+        res.status(400).send({ errorsMessages: errorsMessages });
         return;
     }
 
@@ -45,7 +45,7 @@ videosRouter.post('/', (req: Request, res: Response) => {
         canBeDownloaded: false,
         minAgeRestriction: null,
         createdAt: new Date(),
-        publicationDate: new Date(new Date().getDate() + 1),
+        publicationDate: new Date(new Date().getTime() + 86400000),
         ...req.body
     };
 

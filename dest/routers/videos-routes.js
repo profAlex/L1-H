@@ -19,12 +19,12 @@ exports.videosRouter.get('/:id', (req, res) => {
 });
 exports.videosRouter.post('/', (req, res) => {
     // здесь валидация входящего реквеста
-    const errors = (0, fields_validation_1.newVideoFieldsValidation)(req);
-    if (errors.length > 0) {
-        res.status(400).send({ errors: errors });
+    const errorsMessages = (0, fields_validation_1.newVideoFieldsValidation)(req);
+    if (errorsMessages.length > 0) {
+        res.status(400).send({ errorsMessages: errorsMessages });
         return;
     }
-    const newVideo = Object.assign({ id: mock_data_1.videoDb.videos.length ? mock_data_1.videoDb.videos[mock_data_1.videoDb.videos.length - 1].id + 1 : 1, canBeDownloaded: false, minAgeRestriction: null, createdAt: new Date(), publicationDate: new Date(new Date().getDate() + 1) }, req.body);
+    const newVideo = Object.assign({ id: mock_data_1.videoDb.videos.length ? mock_data_1.videoDb.videos[mock_data_1.videoDb.videos.length - 1].id + 1 : 1, canBeDownloaded: false, minAgeRestriction: null, createdAt: new Date(), publicationDate: new Date(new Date().getTime() + 86400000) }, req.body);
     mock_data_1.videoDb.videos.push(newVideo);
     res.status(201).send(newVideo);
 });
