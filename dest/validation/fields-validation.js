@@ -54,7 +54,7 @@ const newVideoFieldsValidation = (request) => {
 exports.newVideoFieldsValidation = newVideoFieldsValidation;
 const updateVideoFieldsValidation = (request) => {
     const errorsArray = (0, exports.newVideoFieldsValidation)(request);
-    if (!request.body.canBeDownloaded || typeof request.body.title !== "boolean") {
+    if (!request.body.canBeDownloaded || typeof request.body.canBeDownloaded !== "boolean") {
         errorsArray.push({ field: 'canBeDownloaded', message: 'field is missing or has incorrect type' });
     }
     if (request.body.minAgeRestriction === undefined) {
@@ -67,8 +67,8 @@ const updateVideoFieldsValidation = (request) => {
     if (!request.body.publicationDate) {
         errorsArray.push({ field: 'publicationDate', message: 'field is missing' });
     }
-    else if (typeof request.body.title !== 'string') {
-        errorsArray.push({ field: 'title', message: 'field is missing or has incorrect type' });
+    else if (typeof request.body.publicationDate !== 'string') {
+        errorsArray.push({ field: 'publicationDate', message: 'field is missing or has incorrect type' });
     }
     return errorsArray;
 };
