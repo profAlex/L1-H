@@ -43,6 +43,12 @@ exports.videosRouter.put('/:id', (req, res) => {
         return;
     }
     */
+    //const errorsMessages: FieldError[] = updateVideoFieldsValidation(req);
+    const errorsMessages = (0, fields_validation_1.newVideoFieldsValidation)(req);
+    if (errorsMessages.length > 0) {
+        res.status(400).send({ errorsMessages: errorsMessages });
+        return;
+    }
     const indexOfElement = mock_data_1.videoDb.videos.findIndex((d) => d.id === +req.params.id);
     mock_data_1.videoDb.videos[indexOfElement] = Object.assign(Object.assign({}, mock_data_1.videoDb.videos[indexOfElement]), req.body);
     res.sendStatus(204); //.send(videoDb.videos[indexOfElement]);

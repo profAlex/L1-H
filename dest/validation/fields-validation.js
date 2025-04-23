@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.newVideoFieldsValidation = void 0;
+exports.updateVideoFieldsValidation = exports.newVideoFieldsValidation = void 0;
 const basic_types_1 = require("../basic_types/basic-types");
 const ifResolutionsMeetRequirements = (resolutions) => {
     if (resolutions && resolutions.length) {
@@ -52,3 +52,8 @@ const newVideoFieldsValidation = (request) => {
     return errorsArray;
 };
 exports.newVideoFieldsValidation = newVideoFieldsValidation;
+const updateVideoFieldsValidation = (req) => {
+    const errorsArray = [];
+    return errorsArray;
+};
+exports.updateVideoFieldsValidation = updateVideoFieldsValidation;

@@ -71,6 +71,13 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
         return;
     }
     */
+    //const errorsMessages: FieldError[] = updateVideoFieldsValidation(req);
+    const errorsMessages: FieldError[] = newVideoFieldsValidation(req);
+
+    if(errorsMessages.length > 0) {
+        res.status(400).send({ errorsMessages: errorsMessages });
+        return;
+    }
 
     const indexOfElement = videoDb.videos.findIndex((d) => d.id === +req.params.id);
 

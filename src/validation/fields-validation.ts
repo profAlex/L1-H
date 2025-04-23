@@ -20,9 +20,8 @@ const ifResolutionsMeetRequirements = (resolutions: Array<string>) :boolean => {
     return false;
 };
 
-export const newVideoFieldsValidation = (
-    request: Request) :FieldError[] => {
-
+export const newVideoFieldsValidation = (request: Request) :FieldError[] =>
+{
     const errorsArray: FieldError[] = [];
 
     if(!request.body.title || typeof request.body.title !== "string")
@@ -64,3 +63,13 @@ export const newVideoFieldsValidation = (
 
     return errorsArray;
 };
+
+export const updateVideoFieldsValidation = (req: Request) :FieldError[] =>
+{
+
+
+    const errorsArray: FieldError[] = [];
+
+
+    return errorsArray;
+}
