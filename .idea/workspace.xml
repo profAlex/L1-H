@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c4a9ab30-0cff-4dd4-a420-f6e239ebd549" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dest/basic_types/basic-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/basic_types/basic-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dest/db/mock-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/db/mock-data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dest/routers/videos-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/videos-routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dest/validation/fields-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/validation/fields-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/basic_types/basic-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/basic_types/basic-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/mock-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/mock-data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/testing-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/testing-routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/videos-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/videos-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation/fields-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/fields-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +94,7 @@
       <workItem from="1744976142912" duration="6945000" />
       <workItem from="1745076249340" duration="15698000" />
       <workItem from="1745333180758" duration="6627000" />
-      <workItem from="1745437317143" duration="9112000" />
+      <workItem from="1745437317143" duration="9777000" />
     </task>
     <servers />
   </component>
