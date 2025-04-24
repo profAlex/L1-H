@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateVideoFieldsValidation = exports.newVideoFieldsValidation = void 0;
 const basic_types_1 = require("../basic_types/basic-types");
+// вспомогательная функция проверки массива разрешений
 const ifResolutionsMeetRequirements = (resolutions) => {
     if (resolutions && resolutions.length) {
         /*resolutions.every((item: string) => {
@@ -19,6 +20,7 @@ const ifResolutionsMeetRequirements = (resolutions) => {
     }
     return false;
 };
+//функция валидации вновь вносимых записей-карточек в БД
 const newVideoFieldsValidation = (request) => {
     const errorsArray = [];
     if (!request.body.title || typeof request.body.title !== "string") {
@@ -52,6 +54,7 @@ const newVideoFieldsValidation = (request) => {
     return errorsArray;
 };
 exports.newVideoFieldsValidation = newVideoFieldsValidation;
+//функция валидации PUT запросов с обновлениями в записи-карточки в БД
 const updateVideoFieldsValidation = (request) => {
     const errorsArray = (0, exports.newVideoFieldsValidation)(request);
     if (!request.body.canBeDownloaded || typeof request.body.canBeDownloaded !== "boolean") {

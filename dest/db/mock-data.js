@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.videoDb = void 0;
 const basic_types_1 = require("../basic_types/basic-types");
+const utility_functions_1 = require("../utility/utility-functions");
 exports.videoDb = {
     videos: [{
             id: 1,
@@ -10,7 +11,7 @@ exports.videoDb = {
             canBeDownloaded: true,
             minAgeRestriction: 12,
             createdAt: new Date(),
-            publicationDate: new Date(new Date().getDate() + 1),
+            publicationDate: (0, utility_functions_1.CreateDefaultDate)(), //new Date(new Date().getDate() + 1),
             availableResolutions: [basic_types_1.Resolution.P240],
         },
         {
@@ -20,7 +21,7 @@ exports.videoDb = {
             canBeDownloaded: false,
             minAgeRestriction: 8,
             createdAt: new Date(),
-            publicationDate: new Date(new Date().getDate() + 1),
+            publicationDate: (0, utility_functions_1.CreateDefaultDate)(),
             availableResolutions: [basic_types_1.Resolution.P144]
         }
     ]

@@ -1,4 +1,5 @@
 import {Resolution, Video} from "../basic_types/basic-types";
+import {CreateDefaultDate} from "../utility/utility-functions";
 
 export const videoDb = {
     videos: <Video[]>[{
@@ -8,7 +9,7 @@ export const videoDb = {
         canBeDownloaded: true,
         minAgeRestriction: 12,
         createdAt: new Date(),
-        publicationDate: new Date(new Date().getDate() + 1),
+        publicationDate: CreateDefaultDate(),//new Date(new Date().getDate() + 1),
         availableResolutions: [Resolution.P240],
     },
     {
@@ -18,7 +19,7 @@ export const videoDb = {
         canBeDownloaded: false,
         minAgeRestriction: 8,
         createdAt: new Date(),
-        publicationDate: new Date(new Date().getDate() + 1),
+        publicationDate: CreateDefaultDate(),
         availableResolutions: [Resolution.P144]
     }
 ]};

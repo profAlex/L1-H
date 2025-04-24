@@ -1,6 +1,7 @@
 import {Request} from "express";
 import {FieldError, Resolution} from "../basic_types/basic-types";
 
+// вспомогательная функция проверки массива разрешений
 const ifResolutionsMeetRequirements = (resolutions: Array<string>) :boolean => {
     if(resolutions && resolutions.length) {
         /*resolutions.every((item: string) => {
@@ -20,6 +21,7 @@ const ifResolutionsMeetRequirements = (resolutions: Array<string>) :boolean => {
     return false;
 };
 
+//функция валидации вновь вносимых записей-карточек в БД
 export const newVideoFieldsValidation = (request: Request) :FieldError[] =>
 {
     const errorsArray: FieldError[] = [];
@@ -64,6 +66,7 @@ export const newVideoFieldsValidation = (request: Request) :FieldError[] =>
     return errorsArray;
 };
 
+//функция валидации PUT запросов с обновлениями в записи-карточки в БД
 export const updateVideoFieldsValidation = (request: Request) :FieldError[] =>
 {
     const errorsArray: FieldError[] = newVideoFieldsValidation(request);
