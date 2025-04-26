@@ -12,7 +12,7 @@ const ifResolutionsMeetRequirements = (resolutions) => {
                 }
             })*/
         for (const item of resolutions) {
-            if (!Object.keys(basic_types_1.Resolution).includes(item)) {
+            if (!Object.keys(basic_types_1.Resolution).includes(item.trim())) {
                 return false;
             }
         }
@@ -23,7 +23,7 @@ const ifResolutionsMeetRequirements = (resolutions) => {
 //функция валидации вновь вносимых записей-карточек в БД
 const newVideoFieldsValidation = (request) => {
     const errorsArray = [];
-    request.body.title.trim();
+    //request.body.title.trim(); //почему-то это не срабатывает, изменения не вносятся
     if (!request.body.title || typeof request.body.title !== "string") {
         errorsArray.push({
             field: "title",
@@ -32,12 +32,12 @@ const newVideoFieldsValidation = (request) => {
     }
     if (request.body.title &&
         typeof request.body.title === "string" &&
-        request.body.title.length < 1) {
+        request.body.title.trim().length < 1) {
         errorsArray.push({ field: "title", message: "field has no symbols" });
     }
     if (request.body.title &&
         typeof request.body.title === "string" &&
-        request.body.title.length > 40) {
+        request.body.title.trim().length > 40) {
         errorsArray.push({
             field: "title",
             message: "field has more than 40 symbols",

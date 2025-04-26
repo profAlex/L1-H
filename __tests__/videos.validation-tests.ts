@@ -31,8 +31,13 @@ describe("Request validation tests", () => {
   it("Should not create video record in database", async () => {
     const invalidRequest = await request(app).post('/videos').send({
       ...testCorrectVideoRecord,
+      title: "   ",
+      author: "   ",
+      availableResolutions: ["   "]
+    });
 
-    })
+    expect(invalidRequest.body.errorsMessages).toHaveLength(3);
+
   });
 
 

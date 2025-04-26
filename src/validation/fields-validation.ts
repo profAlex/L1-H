@@ -11,7 +11,7 @@ const ifResolutionsMeetRequirements = (resolutions: Array<string>): boolean => {
             }
         })*/
     for (const item of resolutions) {
-      if (!Object.keys(Resolution).includes(item)) {
+      if (!Object.keys(Resolution).includes(item.trim())) {
         return false;
       }
     }
@@ -25,8 +25,7 @@ const ifResolutionsMeetRequirements = (resolutions: Array<string>): boolean => {
 export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   const errorsArray: FieldError[] = [];
 
-  request.body.title.trim();
-
+  //request.body.title.trim(); //почему-то это не срабатывает, изменения не вносятся
   if (!request.body.title || typeof request.body.title !== "string") {
     errorsArray.push({
       field: "title",
@@ -37,7 +36,7 @@ export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   if (
     request.body.title &&
     typeof request.body.title === "string" &&
-    request.body.title.length < 1
+    request.body.title.trim().length < 1
   ) {
     errorsArray.push({ field: "title", message: "field has no symbols" });
   }
@@ -45,7 +44,7 @@ export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   if (
     request.body.title &&
     typeof request.body.title === "string" &&
-    request.body.title.length > 40
+    request.body.title.trim().length > 40
   ) {
     errorsArray.push({
       field: "title",
