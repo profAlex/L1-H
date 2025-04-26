@@ -19,6 +19,12 @@
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupnpm">
       <scroll-view-position x="0" y="0" />
+      <selected-paths>
+        <path>
+          <id value="$PROJECT_DIR$/package.json" />
+          <id value="watch" />
+        </path>
+      </selected-paths>
     </layout>
   </component>
   <component name="ProjectColorInfo">{
@@ -126,6 +132,8 @@
       <workItem from="1745437317143" duration="11877000" />
       <workItem from="1745597257099" duration="2089000" />
       <workItem from="1745654614205" duration="8771000" />
+      <workItem from="1745677819873" duration="2546000" />
+      <workItem from="1745680837970" duration="64000" />
     </task>
     <servers />
   </component>
