@@ -25,6 +25,8 @@ const ifResolutionsMeetRequirements = (resolutions: Array<string>): boolean => {
 export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   const errorsArray: FieldError[] = [];
 
+  request.body.title.trim();
+
   if (!request.body.title || typeof request.body.title !== "string") {
     errorsArray.push({
       field: "title",
@@ -35,7 +37,7 @@ export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   if (
     request.body.title &&
     typeof request.body.title === "string" &&
-    request.body.title.trim().length < 1
+    request.body.title.length < 1
   ) {
     errorsArray.push({ field: "title", message: "field has no symbols" });
   }
@@ -43,7 +45,7 @@ export const newVideoFieldsValidation = (request: Request): FieldError[] => {
   if (
     request.body.title &&
     typeof request.body.title === "string" &&
-    request.body.title.trim().length > 40
+    request.body.title.length > 40
   ) {
     errorsArray.push({
       field: "title",

@@ -23,6 +23,7 @@ const ifResolutionsMeetRequirements = (resolutions) => {
 //функция валидации вновь вносимых записей-карточек в БД
 const newVideoFieldsValidation = (request) => {
     const errorsArray = [];
+    request.body.title.trim();
     if (!request.body.title || typeof request.body.title !== "string") {
         errorsArray.push({
             field: "title",
@@ -31,12 +32,12 @@ const newVideoFieldsValidation = (request) => {
     }
     if (request.body.title &&
         typeof request.body.title === "string" &&
-        request.body.title.trim().length < 1) {
+        request.body.title.length < 1) {
         errorsArray.push({ field: "title", message: "field has no symbols" });
     }
     if (request.body.title &&
         typeof request.body.title === "string" &&
-        request.body.title.trim().length > 40) {
+        request.body.title.length > 40) {
         errorsArray.push({
             field: "title",
             message: "field has more than 40 symbols",
