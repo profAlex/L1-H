@@ -11,7 +11,7 @@ import { CreateDefaultDate, HttpStatus } from "../utility/utility-functions";
 export const videosRouter = Router();
 
 videosRouter.get("/", (req: Request, res: Response) => {
-  res.status(HttpStatus.Ok).json(videoDb.videos);
+  res.status(HttpStatus.Ok).send(videoDb.videos);
 });
 
 videosRouter.get("/:id", (req: Request, res: Response) => {

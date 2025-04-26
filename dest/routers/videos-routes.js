@@ -7,7 +7,7 @@ const fields_validation_1 = require("../validation/fields-validation");
 const utility_functions_1 = require("../utility/utility-functions");
 exports.videosRouter = (0, express_1.Router)();
 exports.videosRouter.get("/", (req, res) => {
-    res.status(utility_functions_1.HttpStatus.Ok).json(mock_data_1.videoDb.videos);
+    res.status(utility_functions_1.HttpStatus.Ok).send(mock_data_1.videoDb.videos);
 });
 exports.videosRouter.get("/:id", (req, res) => {
     const video = mock_data_1.videoDb.videos.find((d) => d.id === +req.params.id);

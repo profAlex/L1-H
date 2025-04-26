@@ -32,5 +32,15 @@ describe("Overall API tests", () => {
     await request(app).get(`/videos`).expect(HttpStatus.Ok);
   });
 
-  
+  it("GET /videos/:id - should return 404 not found ", async () => {
+    await request(app).get(`/videos/1}`).expect(HttpStatus.NotFound);
+  })
+
+  it("POST and GET /videos/ - should return 201 created and pass following GET query", async () => {
+    await request(app).post(`/videos`).send(testVideoRecord).expect(HttpStatus.Created);
+
+    const temp1 = await request(app).get(`/videos/`).expect(HttpStatus.Ok);
+    expect(temp1.body[0].id).toBe(1);
+    //expect(temp1.body.length()).toBe(1); //не получилось вызвать метод length() у body
+  })
 });
