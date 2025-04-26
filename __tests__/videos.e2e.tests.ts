@@ -34,13 +34,29 @@ describe("Overall API tests", () => {
 
   it("GET /videos/:id - should return 404 not found ", async () => {
     await request(app).get(`/videos/1}`).expect(HttpStatus.NotFound);
-  })
+  });
 
   it("POST and GET /videos/ - should return 201 created and pass following GET query", async () => {
     await request(app).post(`/videos`).send(testVideoRecord).expect(HttpStatus.Created);
 
-    const temp1 = await request(app).get(`/videos/`).expect(HttpStatus.Ok);
-    expect(temp1.body[0].id).toBe(1);
-    //expect(temp1.body.length()).toBe(1); //не получилось вызвать метод length() у body
-  })
+    const testResponse = await request(app).get(`/videos/`).expect(HttpStatus.Ok);
+    expect(testResponse.body[0].id).toBe(1);
+    //expect(testResponse.body.length()).toBe(1); //не получилось вызвать метод length() у body
+  });
+
+  it("PUT /videos/1 and GET /videos/1 - should return 204 no content and 200 success", async () => {
+    const testVideoUpdate = {
+      title: "UpdatedTestMovie01",
+      author: "UpdatedTestAuthor01",
+      canBeDownloaded: true,
+      minAgeRestriction: 14,
+      publicationDate: CreateDefaultDate(), //new Date(new Date().getDate() + 1),
+      availableResolutions: [Resolution.P240, Resolution.P144],
+    }
+
+    await request(app).put(`/videos/1`).send(testVideoUpdate).expect(HttpStatus.NoContent);
+
+    const testResponse = await request(app).get(`/videos/1`).expect(HttpStatus.Ok);
+    expect(testResponse.body[0].title).toBe("UpdatedTestMovie01");
+  });
 });
