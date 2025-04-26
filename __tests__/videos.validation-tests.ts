@@ -1,10 +1,3 @@
-
-
-
-describe('Request validation tests', () => {
-
-    it('GET /videos', () => {
-
-    });
-
+describe("Request validation tests", () => {
+  it("GET /videos", () => {});
 });

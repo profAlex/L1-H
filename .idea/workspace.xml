@@ -7,6 +7,26 @@
     <list default="true" id="c4a9ab30-0cff-4dd4-a420-f6e239ebd549" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__tests__/videos.e2e.tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/videos.e2e.tests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/videos.validation-tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/videos.validation-tests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/db/mock-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/db/mock-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/routers/driver.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/driver.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/routers/testing-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/testing-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/routers/testing.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/testing.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/routers/videos-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/routers/videos-routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/setup-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/setup-app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/utility/utility-functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/utility/utility-functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dest/validation/fields-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/validation/fields-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basic_types/basic-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/basic_types/basic-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/mock-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/mock-data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/testing-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/testing-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/videos-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/videos-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setup-app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup-app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/utility-functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/utility-functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validation/fields-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/fields-validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vercel.json" beforeDir="false" afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +35,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -38,18 +63,30 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
+    "npm.format.executor": "Run",
     "npm.jest.executor": "Run",
-    "npm.watch.executor": "Run",
+    "npm.watch.executor": "Debug",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/bb/Documents/IT_INCUBATOR_WebStorm/Lessons/L1-H/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.watch">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="format" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -77,9 +114,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.jest" />
         <item itemvalue="npm.watch" />
+        <item itemvalue="npm.format" />
+        <item itemvalue="npm.jest" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +144,8 @@
       <workItem from="1745076249340" duration="15698000" />
       <workItem from="1745333180758" duration="6627000" />
       <workItem from="1745437317143" duration="11877000" />
-      <workItem from="1745597257099" duration="2010000" />
+      <workItem from="1745597257099" duration="2089000" />
+      <workItem from="1745654614205" duration="3970000" />
     </task>
     <servers />
   </component>

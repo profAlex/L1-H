@@ -12,13 +12,12 @@ var HttpStatus;
     HttpStatus[HttpStatus["NotFound"] = 404] = "NotFound";
     HttpStatus[HttpStatus["InternalServerError"] = 500] = "InternalServerError";
 })(HttpStatus || (exports.HttpStatus = HttpStatus = {}));
-;
 // вспомогательная функция взамен операции new Date(new Date().getTime() + 86400000),
 // которая видимо из-за ошибки переполнения выдает 1970 год
 const CreateDefaultDate = () => {
     const currentTime = new Date().getTime();
     const oneDayInMs = 86400000;
     const futureTime = currentTime + oneDayInMs;
-    return (new Date(futureTime));
+    return new Date(futureTime);
 };
 exports.CreateDefaultDate = CreateDefaultDate;
