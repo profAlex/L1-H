@@ -101,8 +101,7 @@ export const newVideoFieldsValidation = (request: Request): FieldError[] => {
 export const updateVideoFieldsValidation = (request: Request): FieldError[] => {
   const errorsArray: FieldError[] = newVideoFieldsValidation(request);
 
-  if (
-    !request.body.canBeDownloaded ||
+  if (!request.body.canBeDownloaded ||
     typeof request.body.canBeDownloaded !== "boolean"
   ) {
     errorsArray.push({
@@ -128,7 +127,7 @@ export const updateVideoFieldsValidation = (request: Request): FieldError[] => {
 
   if (!request.body.publicationDate) {
     errorsArray.push({ field: "publicationDate", message: "field is missing" });
-  } else if (typeof request.body.publicationDate !== "string") {
+  } else if (typeof request.body.publicationDate !== "string" || isNaN(Date.parse(request.body.publicationDate))) {
     errorsArray.push({
       field: "publicationDate",
       message: "field is missing or has incorrect type",

@@ -7,7 +7,6 @@
     <list default="true" id="c4a9ab30-0cff-4dd4-a420-f6e239ebd549" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__tests__/videos.validation-tests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/videos.validation-tests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dest/validation/fields-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/dest/validation/fields-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/validation/fields-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/fields-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +23,7 @@
       <selected-paths>
         <path>
           <id value="$PROJECT_DIR$/package.json" />
-          <id value="watch" />
+          <id value="dev" />
         </path>
       </selected-paths>
     </layout>
@@ -102,10 +101,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.watch" />
         <item itemvalue="npm.format" />
         <item itemvalue="npm.jest" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +134,7 @@
       <workItem from="1745597257099" duration="2089000" />
       <workItem from="1745654614205" duration="8771000" />
       <workItem from="1745677819873" duration="2546000" />
-      <workItem from="1745680837970" duration="5106000" />
+      <workItem from="1745680837970" duration="8316000" />
     </task>
     <servers />
   </component>

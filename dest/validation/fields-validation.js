@@ -106,7 +106,7 @@ const updateVideoFieldsValidation = (request) => {
     if (!request.body.publicationDate) {
         errorsArray.push({ field: "publicationDate", message: "field is missing" });
     }
-    else if (typeof request.body.publicationDate !== "string") {
+    else if (typeof request.body.publicationDate !== "string" || isNaN(Date.parse(request.body.publicationDate))) {
         errorsArray.push({
             field: "publicationDate",
             message: "field is missing or has incorrect type",

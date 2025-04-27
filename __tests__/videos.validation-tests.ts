@@ -28,17 +28,43 @@ describe("Request validation tests", () => {
     await request(app).delete(`/testing/all-data`).expect(HttpStatus.NoContent);
   });
 
-  it("Should not create video record in database", async () => {
+  it("Should not create new video record in database", async () => {
     const invalidRequest = await request(app).post('/videos').send({
       ...testCorrectVideoRecord,
       title: "   ",
       author: "   ",
-      availableResolutions: ["   "]
+      availableResolutions: ["   ", "invalid"]
     });
 
     expect(invalidRequest.body.errorsMessages).toHaveLength(3);
 
+    const invalidRequest2 = await request(app).post('/videos').send({
+      ...testCorrectVideoRecord,
+      title: 1,
+      author: 2,
+      availableResolutions: ["invalid"]
+    });
+
+    expect(invalidRequest2.body.errorsMessages).toHaveLength(3);
+
+    const testResponse = await request(app).get('/videos').expect(HttpStatus.Ok);
+    expect(testResponse.body).toHaveLength(0);
   });
 
+
+  it("PUT query should not update existing records in database", async () => {
+    await request(app).post(`/videos`).send(testCorrectVideoRecord).expect(HttpStatus.Created);
+
+    const testIncorrectVideoUpdate = {
+      ...testCorrectVideoRecord,
+
+      canBeDownloaded: 123,
+      minAgeRestriction: "",
+      publicationDate: "asd"
+    };
+
+    const testResponse = await request(app).put(`/videos/1`).send(testIncorrectVideoUpdate).expect(HttpStatus.BadRequest);
+    expect(testResponse.body.errorsMessages).toHaveLength(3);
+  });
 
 });
